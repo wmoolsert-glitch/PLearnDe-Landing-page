@@ -219,12 +219,28 @@
         </div>
 
         <p class="eyebrow work__clients-label">Clients</p>
-        <div class="grid grid--clients">
-          <div class="slot slot--client"><img src="assets/clients/parliament-thailand.svg" alt="รัฐสภาไทย" loading="lazy"></div>
-          <div class="slot slot--client"><img src="assets/clients/cydot.png" alt="ศอ.ปส.ย. — ศูนย์อำนวยการประสานงานป้องกันและแก้ไขปัญหายาเสพติดภาคเยาวชน" loading="lazy"></div>
-          <div class="slot slot--client"><img src="assets/clients/peaceful-death.webp" alt="Peaceful Death" loading="lazy"></div>
-          <div class="slot slot--client"><img src="assets/clients/jtc.jpeg" alt="Jewelry Trade Center Bangkok" loading="lazy"></div>
-          <div class="slot slot--client"><img src="assets/clients/pegasus.jpg" alt="Pegasus International Co., Ltd." loading="lazy"></div>
+        <!--
+          Infinite marquee: the logo set is rendered twice and the track
+          translates by -50%, so the loop is seamless. Pauses on hover;
+          falls back to a static wrapping row under prefers-reduced-motion.
+        -->
+        <div class="marquee" aria-label="ลูกค้าที่เคยร่วมงาน">
+          <div class="marquee__track">
+            <div class="marquee__set">
+              <div class="slot slot--client"><img src="assets/clients/parliament-thailand.svg" alt="รัฐสภาไทย" loading="lazy"></div>
+              <div class="slot slot--client"><img src="assets/clients/cydot.png" alt="ศอ.ปส.ย. — ศูนย์อำนวยการประสานงานป้องกันและแก้ไขปัญหายาเสพติดภาคเยาวชน" loading="lazy"></div>
+              <div class="slot slot--client"><img src="assets/clients/peaceful-death.webp" alt="Peaceful Death" loading="lazy"></div>
+              <div class="slot slot--client"><img src="assets/clients/jtc.jpeg" alt="Jewelry Trade Center Bangkok" loading="lazy"></div>
+              <div class="slot slot--client"><img src="assets/clients/pegasus.jpg" alt="Pegasus International Co., Ltd." loading="lazy"></div>
+            </div>
+            <div class="marquee__set" aria-hidden="true">
+              <div class="slot slot--client"><img src="assets/clients/parliament-thailand.svg" alt="" loading="lazy"></div>
+              <div class="slot slot--client"><img src="assets/clients/cydot.png" alt="" loading="lazy"></div>
+              <div class="slot slot--client"><img src="assets/clients/peaceful-death.webp" alt="" loading="lazy"></div>
+              <div class="slot slot--client"><img src="assets/clients/jtc.jpeg" alt="" loading="lazy"></div>
+              <div class="slot slot--client"><img src="assets/clients/pegasus.jpg" alt="" loading="lazy"></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
