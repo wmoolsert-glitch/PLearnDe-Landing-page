@@ -136,19 +136,77 @@ img, svg { display: block; }
 }
 .logo:hover { color: var(--forest-ink); }
 
-.logo__mark { width: 48px; height: 48px; }
-.mark-dot { fill: var(--dot, #2E7A52); }
+.logo__mark { width: 64px; height: 64px; flex: none; }
 
 .logo__word {
   font-family: var(--font-logo);
-  font-size: 19px;
-  margin-left: -4px;
+  font-size: 26px;
+  line-height: 1;
+  margin-left: -5px;
   white-space: nowrap;
 }
 
 .logo--reversed { color: var(--on-dark); }
-.logo--reversed .logo__mark { width: 52px; height: 52px; }
-.logo--reversed .logo__word { font-size: 20px; }
+.logo--reversed:hover { color: var(--on-dark); }
+
+/* Letters are inline-block so they can move independently in the wave */
+.logo__char { display: inline-block; }
+.logo__char--space { white-space: pre; }
+
+/* ── Logo animation ───────────────────────────────────────
+   1. mark: rises + unwinds into place
+   2. path: spiral draws from the base upward (pathLength="100")
+   3. dot: pops in at the open end
+   4. wordmark: letters rise one after another as a wave
+   Triggered by .is-playing (added on load and on hover via JS). */
+
+.logo--animated .logo__mark {
+  transform-origin: 50% 60%;
+}
+.logo--animated .logo__path {
+  stroke-dasharray: 100 100;
+  stroke-dashoffset: 0;
+}
+.logo--animated .logo__dot {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.logo--animated.is-playing .logo__mark {
+  animation: logo-rise 1s cubic-bezier(.2, .7, .2, 1) both;
+}
+.logo--animated.is-playing .logo__path {
+  animation: logo-draw 1s cubic-bezier(.4, 0, .2, 1) both;
+}
+.logo--animated.is-playing .logo__dot {
+  animation: logo-pop .5s .8s cubic-bezier(.34, 1.56, .64, 1) both;
+}
+.logo--animated.is-playing .logo__char {
+  animation: logo-wave .75s cubic-bezier(.22, 1, .36, 1) both;
+  animation-delay: calc(.5s + var(--i) * 60ms);
+}
+
+@keyframes logo-rise {
+  0%   { transform: translateY(10px) rotate(-50deg) scale(.7); opacity: 0; }
+  35%  { opacity: 1; }
+  100% { transform: translateY(0) rotate(0) scale(1); opacity: 1; }
+}
+
+@keyframes logo-draw {
+  0%   { stroke-dashoffset: 100; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes logo-pop {
+  0%   { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes logo-wave {
+  0%   { transform: translateY(16px); opacity: 0; }
+  55%  { transform: translateY(-7px); opacity: 1; }
+  100% { transform: translateY(0); opacity: 1; }
+}
 
 /* ── Buttons ──────────────────────────────────────────────── */
 
@@ -199,8 +257,8 @@ img, svg { display: block; }
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 .nav {
@@ -573,6 +631,9 @@ img, svg { display: block; }
 @media (max-width: 640px) {
   :root { --gutter: 20px; --section-y: 72px; }
 
+  .logo__mark { width: 52px; height: 52px; }
+  .logo__word { font-size: 21px; margin-left: -4px; }
+
   .hero__inner { padding-top: 72px; padding-bottom: 96px; }
   .wave svg { height: 120px; }
   .wave--inset { left: 20px; right: 20px; }
@@ -591,4 +652,8 @@ img, svg { display: block; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .btn, .card--outline { transition: none; }
+  .logo--animated.is-playing .logo__mark,
+  .logo--animated.is-playing .logo__path,
+  .logo--animated.is-playing .logo__dot,
+  .logo--animated.is-playing .logo__char { animation: none; }
 }

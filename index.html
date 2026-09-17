@@ -23,20 +23,20 @@
 </head>
 <body>
 
-  <!-- Reusable logo mark. Referenced with <use href="#plearn-mark"> below. -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <symbol id="plearn-mark" viewBox="0 0 120 120">
-      <path d="M26 88c0-30 14-52 34-52s26 14 26 26-10 22-22 22-20-10-20-22 10-26 30-26h13" stroke="currentColor" stroke-width="11" stroke-linecap="round" fill="none"/>
-      <circle class="mark-dot" cx="94" cy="88" r="7"/>
-    </symbol>
-  </svg>
-
   <!-- ── Header ─────────────────────────────────────────── -->
   <header class="header">
     <div class="container header__inner">
-      <a href="#top" class="logo" aria-label="PLearn DE — กลับขึ้นด้านบน">
-        <svg class="logo__mark" aria-hidden="true"><use href="#plearn-mark" style="--dot:#2E7A52"/></svg>
-        <span class="logo__word">PLearn DE</span>
+      <!--
+        Animated logo: the P-spiral draws itself from the base upward, the dot
+        pops in, then the wordmark rises letter by letter as a wave.
+        Plays on load and replays on hover / focus (see script at the bottom).
+      -->
+      <a href="#top" class="logo logo--animated" aria-label="PLearn DE — กลับขึ้นด้านบน">
+        <svg class="logo__mark" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+          <path class="logo__path" pathLength="100" d="M26 88c0-30 14-52 34-52s26 14 26 26-10 22-22 22-20-10-20-22 10-26 30-26h13" stroke="currentColor" stroke-width="11" stroke-linecap="round"/>
+          <circle class="logo__dot" cx="94" cy="88" r="7" fill="#2E7A52"/>
+        </svg>
+        <span class="logo__word" aria-hidden="true"><span class="logo__char" style="--i:0">P</span><span class="logo__char" style="--i:1">L</span><span class="logo__char" style="--i:2">e</span><span class="logo__char" style="--i:3">a</span><span class="logo__char" style="--i:4">r</span><span class="logo__char" style="--i:5">n</span><span class="logo__char logo__char--space" style="--i:6"> </span><span class="logo__char" style="--i:7">D</span><span class="logo__char" style="--i:8">E</span></span>
       </a>
 
       <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="เปิดเมนู">
@@ -251,9 +251,12 @@
   <!-- ── Footer ─────────────────────────────────────────── -->
   <footer class="footer">
     <div class="container footer__inner">
-      <div class="logo logo--reversed">
-        <svg class="logo__mark" aria-hidden="true"><use href="#plearn-mark" style="--dot:#8FBFA4"/></svg>
-        <span class="logo__word">PLearn DE</span>
+      <div class="logo logo--reversed logo--animated" role="img" aria-label="PLearn DE" tabindex="0">
+        <svg class="logo__mark" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+          <path class="logo__path" pathLength="100" d="M26 88c0-30 14-52 34-52s26 14 26 26-10 22-22 22-20-10-20-22 10-26 30-26h13" stroke="currentColor" stroke-width="11" stroke-linecap="round"/>
+          <circle class="logo__dot" cx="94" cy="88" r="7" fill="#8FBFA4"/>
+        </svg>
+        <span class="logo__word" aria-hidden="true"><span class="logo__char" style="--i:0">P</span><span class="logo__char" style="--i:1">L</span><span class="logo__char" style="--i:2">e</span><span class="logo__char" style="--i:3">a</span><span class="logo__char" style="--i:4">r</span><span class="logo__char" style="--i:5">n</span><span class="logo__char logo__char--space" style="--i:6"> </span><span class="logo__char" style="--i:7">D</span><span class="logo__char" style="--i:8">E</span></span>
       </div>
       <p class="footer__tag">Learning &amp; Workshop Design Team</p>
       <a class="footer__link" href="https://www.facebook.com/profile.php?id=61557383098262" target="_blank" rel="noopener">Facebook</a>
@@ -261,6 +264,31 @@
   </footer>
 
   <script>
+    // Logo animation: play once on load, replay on hover / focus.
+    (function () {
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if (reduce.matches) return;
+
+      var TOTAL_MS = 1600; // spiral (1s) + wordmark wave tail
+
+      document.querySelectorAll('.logo--animated').forEach(function (logo) {
+        var busy = false;
+
+        function play() {
+          if (busy) return;
+          busy = true;
+          logo.classList.remove('is-playing');
+          void logo.offsetWidth; // restart CSS animations
+          logo.classList.add('is-playing');
+          setTimeout(function () { busy = false; }, TOTAL_MS);
+        }
+
+        logo.addEventListener('mouseenter', play);
+        logo.addEventListener('focus', play);
+        play();
+      });
+    })();
+
     // Mobile nav toggle
     (function () {
       var btn = document.querySelector('.nav-toggle');
