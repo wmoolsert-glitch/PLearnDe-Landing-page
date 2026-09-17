@@ -7,8 +7,10 @@
   "assets": {
     // only public/ is served — README, configs and .git stay off the web
     "directory": "./public",
-    // serve /about as /about.html, and 404s fall back to the single page
     "html_handling": "auto-trailing-slash",
-    "not_found_handling": "single-page-application"
+    // a real 404 for missing paths. The SPA fallback would answer every
+    // unknown URL with the homepage at status 200, which hides broken links
+    // and lets search engines index endless duplicates of it.
+    "not_found_handling": "none"
   }
 }

@@ -4,7 +4,7 @@
 Static HTML/CSS ไม่มี build step · deploy บน Cloudflare Pages
 
 - Design system: [`.claude/design.md`](.claude/design.md)
-- Live: https://plearnde.pages.dev
+- Live: https://plearnde-landing-page.w-moolsert.workers.dev
 
 ## โครงสร้าง
 
