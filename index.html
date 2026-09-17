@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PLearn DE — Learning &amp; Workshop Design Team</title>
+  <meta name="description" content="PLearn DE (เพลินดี) ออกแบบการเรียนรู้ที่คนกล้าพูด และทีมเห็นการเติบโตของตัวเอง — Facilitation Workshop, Learning Design, In House Training, Public Course, Team Building">
+  <meta name="theme-color" content="#1F4D35">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PLearn DE — Learning &amp; Workshop Design Team">
+  <meta property="og:description" content="ออกแบบการเรียนรู้ที่คนกล้าพูด และทีมเห็นการเติบโตของตัวเอง">
+  <meta property="og:image" content="assets/logo-stacked-forest.png">
+  <meta property="og:locale" content="th_TH">
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/logo-mark-forest.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300..700&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Reusable logo mark. Referenced with <use href="#plearn-mark"> below. -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="plearn-mark" viewBox="0 0 120 120">
+      <path d="M26 88c0-30 14-52 34-52s26 14 26 26-10 22-22 22-20-10-20-22 10-26 30-26h13" stroke="currentColor" stroke-width="11" stroke-linecap="round" fill="none"/>
+      <circle class="mark-dot" cx="94" cy="88" r="7"/>
+    </symbol>
+  </svg>
+
+  <!-- ── Header ─────────────────────────────────────────── -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#top" class="logo" aria-label="PLearn DE — กลับขึ้นด้านบน">
+        <svg class="logo__mark" aria-hidden="true"><use href="#plearn-mark" style="--dot:#2E7A52"/></svg>
+        <span class="logo__word">PLearn DE</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="เปิดเมนู">
+        <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+
+      <nav id="site-nav" class="nav" aria-label="เมนูหลัก">
+        <a class="nav__link" href="#problem">ปัญหาที่เจอ</a>
+        <a class="nav__link" href="#services">บริการ</a>
+        <a class="nav__link" href="#framework">5D Framework</a>
+        <a class="nav__link" href="#work">ผลงาน</a>
+        <a class="btn btn--primary btn--sm" href="https://www.facebook.com/profile.php?id=61557383098262" target="_blank" rel="noopener">ทักเราทาง Facebook</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── Hero ─────────────────────────────────────────── -->
+    <section id="top" class="hero">
+      <div class="wave" aria-hidden="true">
+        <svg viewBox="0 0 400 64" fill="none" preserveAspectRatio="none">
+          <path d="M0 48c60 0 60-32 120-32s60 32 120 32 60-32 120-32" stroke="#8FBFA4" stroke-width="7" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <div class="container hero__inner">
+        <div class="eyebrow-dot">
+          <span class="dot" aria-hidden="true"></span>
+          <p class="eyebrow">Learning &amp; Workshop Design Team</p>
+        </div>
+        <h1 class="h1">ออกแบบการเรียนรู้ที่คนกล้าพูด และทีมเห็นการเติบโตของตัวเอง</h1>
+        <p class="hero__lead">เราเชื่อว่าคนทำงานไม่ใช่แค่ฟันเฟืองขององค์กร แต่เป็นมนุษย์ที่มีทั้งศักยภาพที่รอการปลดล็อกและพร้อมเติบโตอย่างไม่หยุดยั้ง</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="https://www.facebook.com/profile.php?id=61557383098262" target="_blank" rel="noopener">ทักเราทาง Facebook</a>
+          <a class="btn btn--secondary" href="#services">ดูบริการทั้งหมด</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Problem ──────────────────────────────────────── -->
+    <section id="problem" class="problem section">
+      <div class="container">
+        <p class="eyebrow">The problem</p>
+        <h2 class="h2">อาการที่องค์กรมักเจอ</h2>
+
+        <div class="grid grid--3">
+          <article class="card--filled">
+            <div class="num" aria-hidden="true">01</div>
+            <h3 class="h3">อบรมแล้วไม่ได้ใช้ต่อ</h3>
+            <p>เนื้อหาดี คนชอบ แต่พอกลับไปทำงานจริงก็กลับไปทำแบบเดิม</p>
+          </article>
+          <article class="card--filled">
+            <div class="num" aria-hidden="true">02</div>
+            <h3 class="h3">ประชุมแล้วไม่มีข้อสรุป</h3>
+            <p>ใช้เวลาไปมาก แต่คนที่ควรพูดกลับเงียบ และงานไม่ขยับ</p>
+          </article>
+          <article class="card--filled">
+            <div class="num" aria-hidden="true">03</div>
+            <h3 class="h3">ทีมโตแต่ไม่รู้ว่าโตตรงไหน</h3>
+            <p>ทำงานหนักขึ้นทุกปี แต่ไม่มีภาพร่วมกันว่าทีมพัฒนาไปทางไหน</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Services ─────────────────────────────────────── -->
+    <section id="services" class="services section">
+      <div class="container">
+        <p class="eyebrow">Core Service</p>
+        <h2 class="h2">บริการหลักห้ากลุ่ม</h2>
+
+        <div class="grid grid--services">
+          <article class="card--outline">
+            <span class="dot dot--lg" aria-hidden="true"></span>
+            <h3 class="h3">Facilitation Workshop</h3>
+            <p>ออกแบบและนำกระบวนการประชุมให้ถึงเป้าหมาย โดยทุกคนในห้องมีส่วนร่วมจริง</p>
+            <p class="card__tags">Foresight · Strategy · Participatory · AAR</p>
+          </article>
+
+          <article class="card--outline">
+            <span class="dot dot--lg" aria-hidden="true"></span>
+            <h3 class="h3">Learning Design</h3>
+            <p>ออกแบบหลักสูตรและสื่อการเรียนรู้เฉพาะองค์กร เริ่มจากบริบทของคุณ ไม่ใช่ของสำเร็จรูป</p>
+            <p class="card__tags">Bespoke</p>
+          </article>
+
+          <article class="card--outline">
+            <span class="dot dot--lg" aria-hidden="true"></span>
+            <h3 class="h3">In House Training</h3>
+            <p>จัดอบรมในองค์กรของคุณ ปรับเนื้อหาและกรณีศึกษาให้ตรงกับงานที่ทีมทำอยู่</p>
+            <p class="card__tags">Foresight for Facilitators · Facilitator for Manager · Learning Design · Workshop Design · Leadership Development</p>
+          </article>
+
+          <article class="card--outline">
+            <span class="dot dot--lg dot--hollow" aria-hidden="true"></span>
+            <h3 class="h3">Public Course</h3>
+            <p>หลักสูตรเปิดสำหรับบุคคลทั่วไป ได้เรียนและแลกเปลี่ยนกับคนต่างองค์กร</p>
+            <p class="card__tags">Foresight for Facilitators · Facilitator for Manager · Learning Design · Workshop Design</p>
+          </article>
+
+          <article class="card--inverted">
+            <span class="dot dot--lg" aria-hidden="true"></span>
+            <h3 class="h3">Team Building</h3>
+            <p>กิจกรรมที่ทำให้ทีมมองเห็นการเติบโตของตัวเอง และกลับไปทำงานด้วยกันได้ดีขึ้น</p>
+            <p class="card__tags">Empowerment</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 5D Framework ─────────────────────────────────── -->
+    <section id="framework" class="framework section">
+      <div class="container">
+        <div class="framework__head">
+          <div class="framework__badge" aria-hidden="true">5D</div>
+          <div>
+            <p class="eyebrow">How we work</p>
+            <h2 class="h2">PLearn DE Learning Design Framework</h2>
+          </div>
+        </div>
+
+        <ol class="grid grid--5" style="list-style:none; padding:0; margin-bottom:0;">
+          <li>
+            <div class="step__card">
+              <h3 class="step__title">Discover</h3>
+              <p class="step__th">วิเคราะห์ความต้องการ</p>
+            </div>
+            <p class="step__label">Output</p>
+            <p class="step__output">Needs Analysis<br>Persona / Context</p>
+          </li>
+          <li>
+            <div class="step__card">
+              <h3 class="step__title">Define</h3>
+              <p class="step__th">กำหนดวัตถุประสงค์</p>
+            </div>
+            <p class="step__label">Output</p>
+            <p class="step__output">Learning Objectives<br>Success Criteria</p>
+          </li>
+          <li>
+            <div class="step__card">
+              <h3 class="step__title">Design</h3>
+              <p class="step__th">ออกแบบประสบการณ์</p>
+            </div>
+            <p class="step__label">Output</p>
+            <p class="step__output">Learning Journey<br>Activity Design</p>
+          </li>
+          <li>
+            <div class="step__card">
+              <h3 class="step__title">Deliver</h3>
+              <p class="step__th">จัดกระบวนการ</p>
+            </div>
+            <p class="step__label">Output</p>
+            <p class="step__output">Facilitation Plan<br>Materials &amp; Tools</p>
+          </li>
+          <li>
+            <div class="step__card">
+              <h3 class="step__title">Debrief</h3>
+              <p class="step__th">สะท้อนผล &amp; วัดผล</p>
+            </div>
+            <p class="step__label">Output</p>
+            <p class="step__output">Evaluation Report<br>Next Steps</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ── Work ─────────────────────────────────────────── -->
+    <section id="work" class="work section">
+      <div class="container">
+        <p class="eyebrow">Our work</p>
+        <h2 class="h2">ผลงานที่ผ่านมา</h2>
+
+        <!-- Replace each <span> with <img src="..." alt="..."> to fill a slot -->
+        <div class="grid grid--work">
+          <figure class="slot slot--work" style="margin:0"><span>ภาพงานที่ 1</span></figure>
+          <figure class="slot slot--work" style="margin:0"><span>ภาพงานที่ 2</span></figure>
+          <figure class="slot slot--work" style="margin:0"><span>ภาพงานที่ 3</span></figure>
+        </div>
+
+        <p class="eyebrow work__clients-label">Clients</p>
+        <div class="grid grid--clients">
+          <div class="slot slot--client"><span>โลโก้</span></div>
+          <div class="slot slot--client"><span>โลโก้</span></div>
+          <div class="slot slot--client"><span>โลโก้</span></div>
+          <div class="slot slot--client"><span>โลโก้</span></div>
+          <div class="slot slot--client"><span>โลโก้</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ──────────────────────────────────────────── -->
+    <section class="cta" aria-labelledby="cta-title">
+      <div class="wave wave--inset" aria-hidden="true">
+        <svg viewBox="0 0 400 64" fill="none" preserveAspectRatio="none">
+          <path d="M0 48c60 0 60-32 120-32s60 32 120 32 60-32 120-32" stroke="#8FBFA4" stroke-width="7" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <div class="container cta__inner">
+        <h2 id="cta-title" class="h2">อยากคุยเรื่องทีมของคุณ ทักเรามาได้เลย</h2>
+        <p class="cta__lead">เริ่มจากการคุยกันสั้น ๆ เพื่อเข้าใจสถานการณ์ แล้วเราจะเสนอโครงกระบวนการให้</p>
+        <div class="cta__actions">
+          <a class="btn btn--primary" href="https://www.facebook.com/profile.php?id=61557383098262" target="_blank" rel="noopener">ทักเราทาง Facebook</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="logo logo--reversed">
+        <svg class="logo__mark" aria-hidden="true"><use href="#plearn-mark" style="--dot:#8FBFA4"/></svg>
+        <span class="logo__word">PLearn DE</span>
+      </div>
+      <p class="footer__tag">Learning &amp; Workshop Design Team</p>
+      <a class="footer__link" href="https://www.facebook.com/profile.php?id=61557383098262" target="_blank" rel="noopener">Facebook</a>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    (function () {
+      var btn = document.querySelector('.nav-toggle');
+      var nav = document.getElementById('site-nav');
+      if (!btn || !nav) return;
+
+      function setOpen(open) {
+        nav.classList.toggle('is-open', open);
+        btn.setAttribute('aria-expanded', String(open));
+        btn.setAttribute('aria-label', open ? 'ปิดเมนู' : 'เปิดเมนู');
+      }
+
+      btn.addEventListener('click', function () {
+        setOpen(!nav.classList.contains('is-open'));
+      });
+      nav.addEventListener('click', function (e) {
+        if (e.target.closest('a')) setOpen(false);
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') setOpen(false);
+      });
+    })();
+  </script>
+</body>
+</html>
