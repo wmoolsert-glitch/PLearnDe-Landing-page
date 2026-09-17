@@ -211,11 +211,38 @@
         <p class="eyebrow">Our work</p>
         <h2 class="h2">ผลงานที่ผ่านมา</h2>
 
-        <!-- Replace each <span> with <img src="..." alt="..."> to fill a slot -->
-        <div class="grid grid--work">
-          <figure class="slot slot--work" style="margin:0"><span>ภาพงานที่ 1</span></figure>
-          <figure class="slot slot--work" style="margin:0"><span>ภาพงานที่ 2</span></figure>
-          <figure class="slot slot--work" style="margin:0"><span>ภาพงานที่ 3</span></figure>
+        <!--
+          Photos drift to the right on their own, same seamless trick as the
+          client logos below: the set is rendered twice and the track slides
+          by -50%, so the loop has no seam. Pauses on hover.
+        -->
+        <div class="marquee marquee--photos" aria-label="ภาพบรรยากาศงานที่ผ่านมา">
+          <div class="marquee__track">
+            <div class="marquee__set">
+              <figure class="photo-card"><img src="assets/work/closing-circle-group.jpg" alt="ผู้เข้าร่วมเวิร์กชอปทั้งกลุ่มถ่ายภาพร่วมกันรอบวงใบไม้ที่จัดไว้กลางห้อง" loading="lazy" decoding="async"></figure>
+              <figure class="photo-card"><img src="assets/work/standing-circle.jpg" alt="ผู้เข้าร่วมยืนเป็นแถวในห้องเวิร์กชอปที่มีแสงธรรมชาติและต้นไม้นอกหน้าต่าง" loading="lazy" decoding="async"></figure>
+              <figure class="photo-card"><img src="assets/work/small-group-mapping.jpg" alt="กลุ่มย่อยนั่งพื้นช่วยกันเขียนแผนผังความคิดลงกระดาษ" loading="lazy" decoding="async"></figure>
+              <figure class="photo-card"><img src="assets/work/dialogue-circle.jpg" alt="วงสนทนานั่งพื้น ผู้เข้าร่วมคนหนึ่งกำลังเล่าให้กลุ่มฟัง" loading="lazy" decoding="async"></figure>
+              <figure class="photo-card"><img src="assets/work/youth-presentation.jpg" alt="เยาวชนสองคนนำเสนอผังปัญหาที่ทำจากกระดาษและโพสต์อิท" loading="lazy" decoding="async"></figure>
+              <figure class="photo-card"><img src="assets/work/prioritization-board.jpg" alt="ผู้เข้าร่วมจัดลำดับความสำคัญของประเด็นบนกระดานโพสต์อิท" loading="lazy" decoding="async"></figure>
+              <figure class="photo-card"><img src="assets/work/team-building-tower.jpg" alt="ทีมช่วยกันสร้างหอคอยจากหลอดและกล่องกระดาษในกิจกรรม team building" loading="lazy" decoding="async"></figure>
+              <figure class="photo-card"><img src="assets/work/reflection-sharing.jpg" alt="ผู้เข้าร่วมถือการ์ดสะท้อนความรู้สึกและแบ่งปันกับวง" loading="lazy" decoding="async"></figure>
+              <figure class="photo-card"><img src="assets/work/reflection-board.jpg" alt="กระดานรวมคำสะท้อนของผู้เข้าร่วม เช่น เป็นเพื่อนกับตัวเอง ใจดีกับตัวเอง" loading="lazy" decoding="async"></figure>
+              <figure class="photo-card"><img src="assets/work/youth-workshop-group.jpg" alt="กลุ่มเยาวชนถ่ายภาพร่วมกันหลังจบเวิร์กชอป" loading="lazy" decoding="async"></figure>
+            </div>
+            <div class="marquee__set" aria-hidden="true">
+              <figure class="photo-card"><img src="assets/work/closing-circle-group.jpg" alt="" loading="lazy" decoding="async"></figure>
+              <figure class="photo-card"><img src="assets/work/standing-circle.jpg" alt="" loading="lazy" decoding="async"></figure>
+              <figure class="photo-card"><img src="assets/work/small-group-mapping.jpg" alt="" loading="lazy" decoding="async"></figure>
+              <figure class="photo-card"><img src="assets/work/dialogue-circle.jpg" alt="" loading="lazy" decoding="async"></figure>
+              <figure class="photo-card"><img src="assets/work/youth-presentation.jpg" alt="" loading="lazy" decoding="async"></figure>
+              <figure class="photo-card"><img src="assets/work/prioritization-board.jpg" alt="" loading="lazy" decoding="async"></figure>
+              <figure class="photo-card"><img src="assets/work/team-building-tower.jpg" alt="" loading="lazy" decoding="async"></figure>
+              <figure class="photo-card"><img src="assets/work/reflection-sharing.jpg" alt="" loading="lazy" decoding="async"></figure>
+              <figure class="photo-card"><img src="assets/work/reflection-board.jpg" alt="" loading="lazy" decoding="async"></figure>
+              <figure class="photo-card"><img src="assets/work/youth-workshop-group.jpg" alt="" loading="lazy" decoding="async"></figure>
+            </div>
+          </div>
         </div>
 
         <p class="eyebrow work__clients-label">Clients</p>

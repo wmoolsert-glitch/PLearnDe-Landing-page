@@ -1,2 +1,7 @@
 .netlify/
 .DS_Store
+
+# Video masters live outside the repo — `netlify deploy --dir=.` uploads
+# everything in this folder regardless of .gitignore, so keep them out.
+*.mov
+*.mp4
