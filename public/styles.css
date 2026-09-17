@@ -430,22 +430,170 @@ img, svg { display: block; }
 .card--inverted p { color: var(--on-dark); }
 .card--inverted .card__tags { color: var(--on-dark-dim) !important; }
 
-/* ── Framework ────────────────────────────────────────────── */
+/* ── Shapes ───────────────────────────────────────────────
+   Four formations, held then travelled between, on a 24s loop:
+     A scattered   — different pieces, different starting points
+     B path        — laid out along a learning journey
+     C stack       — built into something
+     D circle      — the Kolb cycle closing
+   Each .pc translates; the .spin inside it rotates about its own centre,
+   which is why every shape is drawn centred on 0,0. */
+
+.shapes { background: var(--mist); }
+
+.shapes__lead {
+  font-size: 19px;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-top: 18px;
+  max-width: 640px;
+}
+
+/* Capped so the pieces read at a human size rather than as specks on a
+   very wide canvas */
+.shapes__stage { margin: 28px auto 0; max-width: 900px; }
+.shapes__stage svg { width: 100%; height: auto; overflow: visible; }
+
+/* 30s = six forms at five seconds each: about three to look, two to travel */
+.pc { animation: 30s ease-in-out infinite both; }
+.spin { transform-origin: 0 0; animation: inherit; }
+
+/* Pieces settle a beat apart so the group never moves as one block */
+.pc1 { animation-name: pc1; }
+.pc2 { animation-name: pc2; animation-delay: -.15s; }
+.pc3 { animation-name: pc3; animation-delay: -.3s; }
+.pc4 { animation-name: pc4; animation-delay: -.45s; }
+.pc5 { animation-name: pc5; animation-delay: -.6s; }
+.pc6 { animation-name: pc6; animation-delay: -.75s; }
+
+/*  A scattered  →  B ม้ากระดก  →  C จรวด  →  D บ้าน  →  E พานรัฐธรรมนูญ  →  F วงจร  */
+@keyframes pc1 { /* filled circle: ground piece, exhaust, the sun, finial */
+  0%,   11%   { transform: translate(70px, 300px); }
+  16.7%, 27.7% { transform: translate(480px, 268px); }
+  33.3%, 44.3% { transform: translate(320px, 306px); }
+  50%,  61%   { transform: translate(430px, 110px); }
+  66.7%, 77.7% { transform: translate(320px, 78px); }
+  83.3%, 94.3% { transform: translate(425px, 180px); }
+  100%        { transform: translate(70px, 300px); }
+}
+@keyframes pc2 { /* ring: seesaw weight, porthole, round window, pan base */
+  0%,   11%   { transform: translate(175px, 308px); }
+  16.7%, 27.7% { transform: translate(374px, 210px); }
+  33.3%, 44.3% { transform: translate(320px, 163px); }
+  50%,  61%   { transform: translate(320px, 190px); }
+  66.7%, 77.7% { transform: translate(320px, 286px); }
+  83.3%, 94.3% { transform: translate(372px, 271px); }
+  100%        { transform: translate(175px, 308px); }
+}
+@keyframes pc3 { /* triangle: fulcrum, nose cone, roof, pedestal stem */
+  0%,   11%   { transform: translate(285px, 292px); }
+  16.7%, 27.7% { transform: translate(320px, 272px); }
+  33.3%, 44.3% { transform: translate(320px, 92px); }
+  50%,  61%   { transform: translate(320px, 134px); }
+  66.7%, 77.7% { transform: translate(320px, 232px); }
+  83.3%, 94.3% { transform: translate(268px, 271px); }
+  100%        { transform: translate(285px, 292px); }
+}
+@keyframes pc4 { /* square: rocket body, house, the constitution */
+  0%,   11%   { transform: translate(395px, 308px); }
+  16.7%, 27.7% { transform: translate(170px, 268px); }
+  33.3%, 44.3% { transform: translate(320px, 163px); }
+  50%,  61%   { transform: translate(320px, 190px); }
+  66.7%, 77.7% { transform: translate(320px, 138px); }
+  83.3%, 94.3% { transform: translate(215px, 180px); }
+  100%        { transform: translate(395px, 308px); }
+}
+@keyframes pc5 { /* semicircle: bowl, flame, garden bush, the pan itself */
+  0%,   11%   { transform: translate(495px, 298px); }
+  16.7%, 27.7% { transform: translate(266px, 184px); }
+  33.3%, 44.3% { transform: translate(320px, 252px); }
+  50%,  61%   { transform: translate(238px, 224px); }
+  66.7%, 77.7% { transform: translate(320px, 170px); }
+  83.3%, 94.3% { transform: translate(268px, 89px); }
+  100%        { transform: translate(495px, 298px); }
+}
+@keyframes pc6 { /* bar: plank, fins, the ground, pan rim */
+  0%,   11%   { transform: translate(580px, 302px); }
+  16.7%, 27.7% { transform: translate(320px, 230px); }
+  33.3%, 44.3% { transform: translate(320px, 212px); }
+  50%,  61%   { transform: translate(320px, 232px); }
+  66.7%, 77.7% { transform: translate(320px, 168px); }
+  83.3%, 94.3% { transform: translate(372px, 89px); }
+  100%        { transform: translate(580px, 302px); }
+}
+
+/* Rotation is tuned per piece so each one lands the right way up in the
+   form it belongs to — a turret dome, an upright nose cone, a tilted
+   plank — and still turns a full circle between forms. */
+.pc1 .spin { animation-name: spin1; }
+.pc2 .spin { animation-name: spin2; }
+.pc3 .spin { animation-name: spin3; }
+.pc4 .spin { animation-name: spin4; }
+.pc5 .spin { animation-name: spin5; }
+.pc6 .spin { animation-name: spin6; }
+
+@keyframes spin1 { from { transform: rotate(0deg); } to { transform: rotate(1080deg); } }
+@keyframes spin2 { from { transform: rotate(0deg); } to { transform: rotate(-1080deg); } }
+@keyframes spin3 { /* upright everywhere but the pan, where it flips into a stem */
+  0%,   11%   { transform: rotate(0deg); }
+  16.7%, 27.7% { transform: rotate(360deg); }
+  33.3%, 44.3% { transform: rotate(720deg); }
+  50%,  61%   { transform: rotate(1080deg); }
+  66.7%, 77.7% { transform: rotate(1620deg); }
+  83.3%, 94.3% { transform: rotate(1980deg); }
+  100%        { transform: rotate(2160deg); }
+}
+@keyframes spin4 { /* always square to the world */
+  0%,   11%   { transform: rotate(0deg); }
+  16.7%, 27.7% { transform: rotate(360deg); }
+  33.3%, 44.3% { transform: rotate(720deg); }
+  50%,  61%   { transform: rotate(1080deg); }
+  66.7%, 77.7% { transform: rotate(1440deg); }
+  83.3%, 94.3% { transform: rotate(1800deg); }
+  100%        { transform: rotate(2160deg); }
+}
+@keyframes spin5 { /* bowl-side up, except as the garden bush where it domes */
+  0%,   11%   { transform: rotate(0deg); }
+  16.7%, 27.7% { transform: rotate(360deg); }
+  33.3%, 44.3% { transform: rotate(720deg); }
+  50%,  61%   { transform: rotate(1260deg); }
+  66.7%, 77.7% { transform: rotate(1440deg); }
+  83.3%, 94.3% { transform: rotate(1800deg); }
+  100%        { transform: rotate(2160deg); }
+}
+@keyframes spin6 { /* level, apart from the tilted seesaw plank */
+  0%,   11%   { transform: rotate(0deg); }
+  16.7%, 27.7% { transform: rotate(348deg); }
+  33.3%, 44.3% { transform: rotate(720deg); }
+  50%,  61%   { transform: rotate(1080deg); }
+  66.7%, 77.7% { transform: rotate(1440deg); }
+  83.3%, 94.3% { transform: rotate(1800deg); }
+  100%        { transform: rotate(2160deg); }
+}
+
+/* ── Framework roadmap ────────────────────────────────────
+   Three columns: labels left, the winding line in the middle, labels
+   right. The line is one SVG spanning all five rows, and each step is
+   placed in the row where the curve swings to its side — so they stay
+   aligned without any absolute positioning. */
 
 .framework { background: var(--forest-ink); }
 
-.framework__head {
-  display: flex;
-  align-items: baseline;
-  gap: 20px;
-  flex-wrap: wrap;
+.framework__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 56px;
+  align-items: start;
 }
 
+/* The "5D" is the hero of this section — logotype-scale, not a label */
 .framework__badge {
   font-family: var(--font-logo);
-  font-size: 40px;
+  font-size: clamp(88px, 9vw, 128px);
   color: var(--soft-green);
-  line-height: 1;
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  margin-bottom: 22px;
 }
 
 .framework .eyebrow { color: var(--soft-green); }
@@ -456,43 +604,70 @@ img, svg { display: block; }
   margin-top: 6px;
 }
 
-.step__card {
-  background: var(--white);
-  border-radius: var(--radius-sm);
-  padding: 24px 22px;
-  min-height: 120px;
+.framework__lead {
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--on-dark-dim);
+  margin-top: 22px;
+  max-width: 420px;
 }
 
-.step__title {
+/* Three columns: labels | ribbon | labels. Rows are fixed so the SVG
+   (preserveAspectRatio="none", 260×700 viewBox) maps 1:1 onto them and
+   each bend lands at the vertical centre of its row. */
+.roadmap {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 260px 1fr;
+  grid-template-rows: 150px 150px 150px 150px 120px;
+  column-gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.roadmap__line {
+  grid-column: 2;
+  grid-row: 1 / span 5;
+  width: 100%;
+  height: 100%;
+}
+
+.rm { align-self: center; }
+.rm1 { grid-column: 2; grid-row: 1; align-self: start; text-align: center; }   /* above the start dot */
+.rm2 { grid-column: 3; grid-row: 2; }                                          /* ribbon swings right */
+.rm3 { grid-column: 1; grid-row: 3; text-align: right; }                       /* swings left */
+.rm4 { grid-column: 3; grid-row: 4; }                                          /* swings right */
+.rm5 { grid-column: 2; grid-row: 5; align-self: end; text-align: center; }     /* below the end */
+
+.rm__step {
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--soft-green);
+}
+
+.rm__title {
   font-family: var(--font-head);
   font-weight: 600;
-  font-size: 25px;
-  line-height: 1.3;
-  color: var(--forest-ink);
-}
-
-.step__th {
-  font-size: 16px;
-  line-height: 1.55;
-  color: var(--text);
+  font-size: 26px;
+  line-height: 1.25;
+  color: var(--on-dark);
   margin-top: 6px;
 }
 
-.step__label {
-  font-family: var(--font-head);
-  font-weight: 600;
-  font-size: 13px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--soft-green);
-  margin-top: 18px;
+.rm__th {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--on-dark);
+  margin-top: 4px;
 }
 
-.step__output {
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--on-dark);
-  margin-top: 5px;
+.rm__out {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--on-dark-dim);
+  margin-top: 8px;
 }
 
 /* ── Work ─────────────────────────────────────────────────── */
@@ -665,6 +840,47 @@ img, svg { display: block; }
 
 @media (max-width: 1000px) {
   .marquee.marquee--photos { --photo-width: 320px; }
+
+  /* The winding line needs three columns to read; below this the steps
+     become a plain list running down a straight rail instead. */
+  .framework__grid { grid-template-columns: 1fr; gap: 40px; }
+  .framework__lead { max-width: none; }
+
+  .roadmap {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    row-gap: 32px;
+    padding-left: 34px;
+  }
+  .roadmap::before {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 10px;
+    bottom: 10px;
+    width: 4px;
+    border-radius: 99px;
+    background: var(--green);
+  }
+  .roadmap__line { display: none; }
+
+  .rm {
+    position: relative;
+    grid-column: 1;
+    grid-row: auto;
+    align-self: auto;
+    text-align: left;
+  }
+  .rm::before {
+    content: "";
+    position: absolute;
+    left: -34px;
+    top: 7px;
+    width: 18px;
+    height: 18px;
+    border-radius: 99px;
+    background: var(--soft-green);
+  }
 }
 
 @media (max-width: 860px) {
@@ -701,6 +917,8 @@ img, svg { display: block; }
 
   .marquee.marquee--photos { --photo-width: 260px; --marquee-gap: 14px; --marquee-duration: 70s; }
 
+  .shapes__lead { font-size: 17px; }
+
   .hero__inner { padding-top: 72px; padding-bottom: 96px; }
   .wave svg { height: 120px; }
   .wave--inset { left: 20px; right: 20px; }
@@ -734,4 +952,13 @@ img, svg { display: block; }
 
   .photo-card img { transition: none; }
   .photo-card:hover img { transform: none; }
+
+  /* Hold the pieces in the closed circle — a still composition, no motion */
+  .pc, .spin { animation: none; }
+  .pc1 { transform: translate(425px, 180px); }
+  .pc2 { transform: translate(372px, 271px); }
+  .pc3 { transform: translate(268px, 271px); }
+  .pc4 { transform: translate(215px, 180px); }
+  .pc5 { transform: translate(268px, 89px); }
+  .pc6 { transform: translate(372px, 89px); }
 }

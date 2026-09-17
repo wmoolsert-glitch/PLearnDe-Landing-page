@@ -149,57 +149,93 @@
       </div>
     </section>
 
+    <!-- ── Shapes ───────────────────────────────────────────
+      Six pieces roll, bounce and settle into four formations —
+      scattered, a learning path, a built stack, then the Kolb circle —
+      before starting over. Pure CSS keyframes; each piece is a <g> that
+      translates, with an inner <g> that spins about its own centre.
+    -->
+    <section class="shapes section" aria-labelledby="shapes-title">
+      <div class="container">
+        <p class="eyebrow">How we think</p>
+        <h2 class="h2" id="shapes-title">ชิ้นส่วนที่ต่างกัน ประกอบกันได้หลายแบบ</h2>
+        <p class="shapes__lead">การเรียนรู้ไม่ได้มีรูปแบบเดียว เราหยิบชิ้นส่วนที่ทีมคุณมีอยู่ — คน ประสบการณ์ บริบท — มาประกอบใหม่ให้เหมาะกับโจทย์ตรงหน้า</p>
+
+        <div class="shapes__stage">
+<svg viewBox="0 0 640 360" role="img" aria-label="ภาพเคลื่อนไหวรูปทรงเรขาคณิตที่เลื่อนมาประกอบกันเป็นสิ่งของต่าง ๆ">
+            <!-- painted back to front: flat pieces first, discs last so they
+                 can sit on top as wheels, portholes and finials -->
+            <g class="pc pc6"><g class="spin"><rect x="-55" y="-9" width="110" height="18" rx="9" fill="#1F4D35"></rect></g></g>
+            <g class="pc pc4"><g class="spin"><rect x="-28" y="-28" width="56" height="56" rx="10" fill="#FFFFFF" stroke="#2E7A52" stroke-width="8"></rect></g></g>
+            <g class="pc pc5"><g class="spin"><path d="M-36 0 A36 36 0 0 0 36 0 Z" fill="#2E7A52"></path></g></g>
+            <g class="pc pc3"><g class="spin"><path d="M0 -34 L31 24 L-31 24 Z" fill="#1F4D35" stroke="#1F4D35" stroke-width="10" stroke-linejoin="round"></path></g></g>
+            <g class="pc pc2"><g class="spin"><circle r="26" fill="none" stroke="#2E7A52" stroke-width="12"></circle></g></g>
+            <g class="pc pc1"><g class="spin"><circle r="28" fill="#8FBFA4"></circle></g></g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
     <!-- ── 5D Framework ─────────────────────────────────── -->
     <section id="framework" class="framework section">
-      <div class="container">
-        <div class="framework__head">
+      <div class="container framework__grid">
+        <div class="framework__intro">
           <div class="framework__badge" aria-hidden="true">5D</div>
-          <div>
-            <p class="eyebrow">How we work</p>
-            <h2 class="h2">PLearn DE Learning Design Framework</h2>
-          </div>
+          <p class="eyebrow">How we work</p>
+          <h2 class="h2">Design Framework</h2>
+          <p class="framework__lead">เราออกแบบทุกกระบวนการผ่านห้าขั้นนี้ ตั้งแต่ทำความเข้าใจโจทย์จนถึงวัดผลสิ่งที่เปลี่ยนไปจริง แต่ละขั้นมีผลลัพธ์ที่ส่งมอบชัดเจน และลำดับปรับได้ตามบริบทของแต่ละองค์กร</p>
         </div>
 
-        <ol class="grid grid--5" style="list-style:none; padding:0; margin-bottom:0;">
-          <li>
-            <div class="step__card">
-              <h3 class="step__title">Discover</h3>
-              <p class="step__th">วิเคราะห์ความต้องการ</p>
-            </div>
-            <p class="step__label">Output</p>
-            <p class="step__output">Needs Analysis<br>Persona / Context</p>
+        <!--
+          Roadmap: one thick ribbon snaking down the middle column, spanning
+          all five grid rows. Step one sits above the start dot, step five
+          below the end, and the middle steps sit in the row where the ribbon
+          swings to their side — so labels align with the bends without any
+          absolute positioning.
+        -->
+        <ol class="roadmap">
+          <!--
+            The road: short drop from the start, then three U-turns whose
+            apexes sit at the centre of rows 2, 3 and 4 (x 235 / 25 / 235),
+            joined by straight runs, ending at the bottom centre. The ball
+            is moved along this path by the script as the section scrolls.
+          -->
+          <svg class="roadmap__line" viewBox="0 0 260 720" fill="none" preserveAspectRatio="none" aria-hidden="true">
+            <path class="roadmap__path"
+                  d="M130 138 C130 150 145 150 160 150 A75 75 0 0 1 160 300 L100 300 A75 75 0 0 0 100 450 L160 450 A75 75 0 0 1 160 600 C140 600 130 606 130 620"
+                  stroke="#2E7A52" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"></path>
+            <circle class="roadmap__ball" cx="130" cy="138" r="10" fill="#8FBFA4"></circle>
+          </svg>
+
+          <li class="rm rm1">
+            <p class="rm__step">Step one</p>
+            <h3 class="rm__title">Discover</h3>
+            <p class="rm__th">วิเคราะห์ความต้องการ</p>
+            <p class="rm__out">Needs Analysis · Persona / Context</p>
           </li>
-          <li>
-            <div class="step__card">
-              <h3 class="step__title">Define</h3>
-              <p class="step__th">กำหนดวัตถุประสงค์</p>
-            </div>
-            <p class="step__label">Output</p>
-            <p class="step__output">Learning Objectives<br>Success Criteria</p>
+          <li class="rm rm2">
+            <p class="rm__step">Step two</p>
+            <h3 class="rm__title">Define</h3>
+            <p class="rm__th">กำหนดวัตถุประสงค์</p>
+            <p class="rm__out">Learning Objectives · Success Criteria</p>
           </li>
-          <li>
-            <div class="step__card">
-              <h3 class="step__title">Design</h3>
-              <p class="step__th">ออกแบบประสบการณ์</p>
-            </div>
-            <p class="step__label">Output</p>
-            <p class="step__output">Learning Journey<br>Activity Design</p>
+          <li class="rm rm3">
+            <p class="rm__step">Step three</p>
+            <h3 class="rm__title">Design</h3>
+            <p class="rm__th">ออกแบบประสบการณ์</p>
+            <p class="rm__out">Learning Journey · Activity Design</p>
           </li>
-          <li>
-            <div class="step__card">
-              <h3 class="step__title">Deliver</h3>
-              <p class="step__th">จัดกระบวนการ</p>
-            </div>
-            <p class="step__label">Output</p>
-            <p class="step__output">Facilitation Plan<br>Materials &amp; Tools</p>
+          <li class="rm rm4">
+            <p class="rm__step">Step four</p>
+            <h3 class="rm__title">Deliver</h3>
+            <p class="rm__th">จัดกระบวนการ</p>
+            <p class="rm__out">Facilitation Plan · Materials &amp; Tools</p>
           </li>
-          <li>
-            <div class="step__card">
-              <h3 class="step__title">Debrief</h3>
-              <p class="step__th">สะท้อนผล &amp; วัดผล</p>
-            </div>
-            <p class="step__label">Output</p>
-            <p class="step__output">Evaluation Report<br>Next Steps</p>
+          <li class="rm rm5">
+            <p class="rm__step">Step five</p>
+            <h3 class="rm__title">Debrief</h3>
+            <p class="rm__th">สะท้อนผล &amp; วัดผล</p>
+            <p class="rm__out">Evaluation Report · Next Steps</p>
           </li>
         </ol>
       </div>
@@ -307,6 +343,46 @@
   </footer>
 
   <script>
+    // Roadmap ball: rides the road as the section scrolls through the
+    // viewport — at the start when the roadmap enters from below, at the
+    // end by the time it has nearly left the top. Pure scroll position, no
+    // easing, so it moves exactly with the wheel.
+    (function () {
+      var path = document.querySelector('.roadmap__path');
+      var ball = document.querySelector('.roadmap__ball');
+      var road = document.querySelector('.roadmap');
+      if (!path || !ball || !road) return;
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+      var length = path.getTotalLength();
+      var raf = null;
+
+      function place() {
+        raf = null;
+        if (getComputedStyle(path.ownerSVGElement).display === 'none') return; // mobile rail
+        var box = road.getBoundingClientRect();
+        var vh = window.innerHeight;
+        // 0 when the top of the road reaches 80% down the screen,
+        // 1 when its bottom reaches 25% from the top
+        var start = vh * 0.8;
+        var end = vh * 0.25;
+        var t = (start - box.top) / ((box.height + start) - end);
+        t = Math.max(0, Math.min(1, t));
+        var p = path.getPointAtLength(t * length);
+        ball.setAttribute('cx', p.x.toFixed(1));
+        ball.setAttribute('cy', p.y.toFixed(1));
+      }
+
+      function onScroll() {
+        if (raf === null) raf = requestAnimationFrame(place);
+      }
+
+      if (reduce.matches) return; // ball stays at the start
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll);
+      place();
+    })();
+
     // Logo animation: play once on load, replay on hover / focus.
     (function () {
       var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');

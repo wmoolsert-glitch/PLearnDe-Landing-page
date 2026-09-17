@@ -91,7 +91,7 @@
 --fs-h2-alt: clamp(26px, 3.2vw, 42px);  /* H2 บนพื้นเข้ม */
 --fs-h3:     27px;                      /* Anuphan 600, lh 1.3 */
 --fs-h3-sm:  26px;                      /* การ์ดบริการ */
---fs-h4:     25px;                      /* การ์ด 5D */
+--fs-h4:     26px;                      /* ชื่อขั้นใน roadmap 5D */
 --fs-lead:   clamp(17px, 2vw, 22px);    /* Plex, lh 1.7 */
 --fs-body:   17px;                      /* Plex, lh 1.7 */
 --fs-body-sm:16px;                      /* lh 1.6 */
@@ -261,7 +261,8 @@ padding:16px 32px; /* ภายใน container 1200px */
 | 1 | Hero | `#top` | `--white` + wave ขอบล่าง | eyebrow "Learning & Workshop Design Team" · H1 "ออกแบบการเรียนรู้ที่คนกล้าพูด และทีมเห็นการเติบโตของตัวเอง" · lead = Brand Essence · ปุ่มคู่ |
 | 2 | Problem | `#problem` | `--mist` | eyebrow "The problem" · H2 "ปัญหาที่องค์กรมักเจอ" · 3 filled cards (01 อบรมแล้วไม่ได้ใช้ต่อ / 02 ประชุมแล้วไม่มีข้อสรุป / 03 ทีมโตแต่ไม่รู้ว่าโตตรงไหน) |
 | 3 | Services | `#services` | `--white` | eyebrow "Core Service" · H2 "บริการหลัก" · 5 cards (ดูตาราง §8.1) |
-| 4 | 5D Framework | `#framework` | `--forest-ink` | "5D" Bauhaus 40px `--soft-green` · eyebrow "How we work" · H2 "PLearn DE Learning Design Framework" · 5 คอลัมน์ (ดู §8.2) |
+| 3b | Shapes | — | `--mist` | eyebrow "How we think" · H2 "ชิ้นส่วนที่ต่างกัน ประกอบกันได้หลายแบบ" · เรขาคณิต 6 ชิ้นวน 6 ฟอร์ม 30s (กระจาย → ม้ากระดก → จรวด → บ้าน → พานรัฐธรรมนูญ → วงจร) |
+| 4 | 5D Framework | `#framework` | `--forest-ink` | ซ้าย: "5D" Bauhaus `clamp(88px, 9vw, 128px)` `--soft-green` (ตัวเด่นของ section) · eyebrow "How we work" · H2 "Design Framework" · ย่อหน้าอธิบาย · ขวา: **roadmap ริบบิ้นคดเคี้ยว** (ดู §8.2) |
 | 5 | Our work | `#work` | `--white` | eyebrow "Our work" · H2 "ผลงานที่ผ่านมา" · grid ภาพ 4:3 × 3 · แถบโลโก้ลูกค้า 5 ช่อง สูง 84px |
 | 6 | CTA | — | `--mist` + wave ขอบล่าง | H2 "อยากคุยเรื่องทีมของคุณ ทักเรามาได้เลย" · "เริ่มจากการคุยกันสั้น ๆ เพื่อเข้าใจสถานการณ์ แล้วเราจะเสนอโครงกระบวนการให้" · ปุ่ม primary กึ่งกลาง |
 | 7 | Footer | — | `--forest-ink` | logo reversed 52px · "Learning & Workshop Design Team" · ลิงก์ Facebook |
@@ -276,19 +277,33 @@ padding:16px 32px; /* ภายใน container 1200px */
 | **Public Course** | outline · dot โปร่ง | หลักสูตรเปิดสำหรับบุคคลทั่วไป ได้เรียนและแลกเปลี่ยนกับคนต่างองค์กร | Foresight for Facilitators · Facilitator for Manager · Learning Design · Workshop Design |
 | **Team Building** | **inverted** · dot soft green | กิจกรรมที่ทำให้ทีมมองเห็นการเติบโตของตัวเอง และกลับไปทำงานด้วยกันได้ดีขึ้น | Empowerment |
 
-### 8.2 5D Framework
+### 8.2 5D Framework — roadmap ถนนโค้งกลับตัว + ลูกกลมไหลตามสกรอลล์
 
-การ์ดขาว radius 16px (min-height 120px) + บล็อก Output ใต้การ์ดบนพื้นเขียวเข้ม
+Grid 3 คอลัมน์ `1fr 260px 1fr` แถวคงที่ `150 150 150 150 120px` · ถนนเป็น SVG เดียว (viewBox 260×720, `preserveAspectRatio="none"`) อยู่คอลัมน์กลางพาดทั้ง 5 แถว · เส้น `--green` หนา 30 หน่วย ปลาย/ข้อต่อมน
 
-| Step | ไทย | Output |
-|---|---|---|
-| **Discover** | วิเคราะห์ความต้องการ | Needs Analysis / Persona · Context |
-| **Define** | กำหนดวัตถุประสงค์ | Learning Objectives / Success Criteria |
-| **Design** | ออกแบบประสบการณ์ | Learning Journey / Activity Design |
-| **Deliver** | จัดกระบวนการ | Facilitation Plan / Materials & Tools |
-| **Debrief** | สะท้อนผล & วัดผล | Evaluation Report / Next Steps |
+```
+M130 138  C130 150 145 150 160 150    → หยดลงจากจุดเริ่มแล้วเลี้ยวขวา
+          A75 75 0 0 1 160 300        → U-turn ขวา ยอดโค้ง (235,225) = กลางแถว 2
+          L100 300                    → วิ่งซ้าย
+          A75 75 0 0 0 100 450        → U-turn ซ้าย ยอดโค้ง (25,375) = กลางแถว 3
+          L160 450                    → วิ่งขวา
+          A75 75 0 0 1 160 600        → U-turn ขวา ยอดโค้ง (235,525) = กลางแถว 4
+          C140 600 130 606 130 620    → จบกลางล่าง
+```
 
-ป้าย "Output" = Anuphan 600, 13px, ls 0.14em, uppercase, `--soft-green`
+**ลูกกลม** `.roadmap__ball` (`--soft-green` r 10) เริ่มที่ (130,138) แล้ว JS ย้ายไปตาม `getPointAtLength(t × ความยาวเส้น)` โดย `t` = ระยะที่ roadmap เลื่อนผ่านจอ (0 เมื่อขอบบนถึง 80% ของจอ → 1 เมื่อขอบล่างถึง 25%) อัปเดตผ่าน rAF บน scroll/resize · reduce-motion หรือไม่มี JS → ลูกกลมอยู่จุดเริ่ม
+
+| Step | ตำแหน่ง | ไทย | Output |
+|---|---|---|---|
+| **Discover** | แถว 1 คอลัมน์กลาง เหนือจุดเริ่ม (กึ่งกลาง) | วิเคราะห์ความต้องการ | Needs Analysis · Persona / Context |
+| **Define** | แถว 2 คอลัมน์ขวา | กำหนดวัตถุประสงค์ | Learning Objectives · Success Criteria |
+| **Design** | แถว 3 คอลัมน์ซ้าย (ชิดขวา) | ออกแบบประสบการณ์ | Learning Journey · Activity Design |
+| **Deliver** | แถว 4 คอลัมน์ขวา | จัดกระบวนการ | Facilitation Plan · Materials & Tools |
+| **Debrief** | แถว 5 คอลัมน์กลาง ใต้ปลายเส้น (กึ่งกลาง) | สะท้อนผล & วัดผล | Evaluation Report · Next Steps |
+
+ป้าย: eyebrow "Step one…" 12px ls 0.2em `--soft-green` → ชื่อ Anuphan 600 26px ขาว → ไทย 16px → Output 14px `--on-dark-dim`
+
+**มือถือ (≤1000px)** เส้นเกลียวซ่อน เปลี่ยนเป็นรายการแนวตั้งบนราง 4px `--green` มีจุด `--soft-green` 18px คั่นแต่ละขั้น
 
 ---
 
