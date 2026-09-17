@@ -524,7 +524,7 @@ img, svg { display: block; }
   letter-spacing: 0.04em;
 }
 .slot--work { aspect-ratio: 4 / 3; border-radius: 18px; }
-.slot--client { height: 84px; border-radius: 10px; }
+.slot--client { height: 96px; border-radius: 10px; }
 
 .slot img {
   position: absolute;
@@ -533,7 +533,7 @@ img, svg { display: block; }
   height: 100%;
   object-fit: cover;
 }
-.slot--client img { object-fit: contain; padding: 16px; }
+.slot--client img { object-fit: contain; padding: 10px 14px; }
 .slot:has(img) { border-style: solid; border-color: transparent; background: var(--white); }
 .slot:has(img) > span { display: none; }
 
