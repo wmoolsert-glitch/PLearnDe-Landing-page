@@ -1,10 +1,10 @@
 # PLearn DE — Landing Page
 
 หน้าเว็บของ **PLearn DE (เพลินดี)** — Learning & Workshop Design Team
-Static HTML/CSS ไม่มี build step · deploy บน Netlify
+Static HTML/CSS ไม่มี build step · deploy บน Cloudflare Pages
 
 - Design system: [`.claude/design.md`](.claude/design.md)
-- Live: https://plearnde.netlify.app
+- Live: https://plearnde.pages.dev
 
 ## โครงสร้าง
 
@@ -52,9 +52,9 @@ sips -Z 1400 -s format jpeg -s formatOptions 68 ต้นฉบับ.JPG --out 
 
 ## Deploy
 
-Netlify deploy อัตโนมัติจาก branch `main` เมื่อเชื่อม repo นี้กับ site `plearnde` แล้ว
-หรือ deploy ด้วยมือ:
+**Cloudflare Pages** ผูกกับ repo นี้ — push ขึ้น `main` แล้ว deploy อัตโนมัติ ไม่ต้องสั่งอะไรเพิ่ม
 
-```bash
-npx netlify-cli deploy --prod --dir=.
-```
+ตั้งค่าใน Cloudflare: build command เว้นว่าง · output directory `/` · ไม่มี framework preset
+Cache headers อยู่ใน [`_headers`](_headers)
+
+> `netlify.toml` ยังเหลือไว้เผื่อย้อนกลับ — Netlify site เดิมหยุดไปเพราะบัญชีใช้ credit หมด ลบทิ้งได้เมื่อ Cloudflare นิ่งแล้ว

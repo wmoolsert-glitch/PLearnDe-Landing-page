@@ -1,0 +1,9 @@
+# Cloudflare Pages headers — mirrors what netlify.toml did.
+# Fonts, logos and photos are content-addressed by filename, so they can be
+# cached hard; index.html and styles.css stay revalidated so edits go live.
+
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
