@@ -259,7 +259,7 @@ padding:16px 32px; /* ภายใน container 1200px */
 |---|---|---|---|---|
 | 0 | Header sticky | — | white 94% + blur | logo · ปัญหาที่เจอ / บริการ / 5D Framework / ผลงาน · ปุ่ม "ทักเราทาง Facebook" |
 | 1 | Hero | `#top` | `--white` + wave ขอบล่าง | eyebrow "Learning & Workshop Design Team" · H1 "ออกแบบการเรียนรู้ที่คนกล้าพูด และทีมเห็นการเติบโตของตัวเอง" · lead = Brand Essence · ปุ่มคู่ |
-| 2 | Problem | `#problem` | `--mist` | eyebrow "The problem" · H2 "อาการที่องค์กรมักเจอ" · 3 filled cards (01 อบรมแล้วไม่ได้ใช้ต่อ / 02 ประชุมแล้วไม่มีข้อสรุป / 03 ทีมโตแต่ไม่รู้ว่าโตตรงไหน) |
+| 2 | Problem | `#problem` | `--mist` | eyebrow "The problem" · H2 "ปัญหาที่องค์กรมักเจอ" · 3 filled cards (01 อบรมแล้วไม่ได้ใช้ต่อ / 02 ประชุมแล้วไม่มีข้อสรุป / 03 ทีมโตแต่ไม่รู้ว่าโตตรงไหน) |
 | 3 | Services | `#services` | `--white` | eyebrow "Core Service" · H2 "บริการหลัก" · 5 cards (ดูตาราง §8.1) |
 | 4 | 5D Framework | `#framework` | `--forest-ink` | "5D" Bauhaus 40px `--soft-green` · eyebrow "How we work" · H2 "PLearn DE Learning Design Framework" · 5 คอลัมน์ (ดู §8.2) |
 | 5 | Our work | `#work` | `--white` | eyebrow "Our work" · H2 "ผลงานที่ผ่านมา" · grid ภาพ 4:3 × 3 · แถบโลโก้ลูกค้า 5 ช่อง สูง 84px |
