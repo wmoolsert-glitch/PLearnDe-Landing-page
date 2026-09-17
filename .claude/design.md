@@ -215,9 +215,11 @@ border-radius:999px; padding:16px 32px;
 ### Button — secondary
 ```css
 font-size:17px; font-weight:600; color:var(--forest-ink);
-border:2px solid var(--border); border-radius:999px; padding:14px 30px;
-/* hover: border-color: var(--soft-green) */
+background:var(--white); border:2px solid var(--soft-green);
+border-radius:999px; padding:14px 30px;
+/* hover: background: var(--mist); border-color: var(--forest-ink) */
 ```
+พื้นขาวทึบเสมอ — ปุ่มมักวางทับเส้นคลื่น ถ้าปล่อยโปร่งจะกลืนกับพื้นหลัง
 
 ### Card — outline (บริการ)
 ```css

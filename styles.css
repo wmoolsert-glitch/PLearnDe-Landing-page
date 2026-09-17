@@ -228,12 +228,18 @@ img, svg { display: block; }
 }
 .btn--primary:hover { color: var(--on-dark); background: var(--green); }
 
+/* Solid white fill so the button never lets the wave show through */
 .btn--secondary {
   color: var(--forest-ink);
-  border: 2px solid var(--border);
+  background: var(--white);
+  border: 2px solid var(--soft-green);
   padding: 14px 30px;
 }
-.btn--secondary:hover { color: var(--forest-ink); border-color: var(--soft-green); }
+.btn--secondary:hover {
+  color: var(--forest-ink);
+  background: var(--mist);
+  border-color: var(--forest-ink);
+}
 
 .btn--sm {
   font-size: 15px;
