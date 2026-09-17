@@ -1,0 +1,14 @@
+{
+  // Cloudflare builds this repo with `npx wrangler deploy`. There is no
+  // server-side code — the "assets" block is what tells Workers to serve the
+  // repo as a static site. Without it the deploy succeeds but serves nothing.
+  "name": "plearnde-landing-page",
+  "compatibility_date": "2026-09-17",
+  "assets": {
+    // only public/ is served — README, configs and .git stay off the web
+    "directory": "./public",
+    // serve /about as /about.html, and 404s fall back to the single page
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "single-page-application"
+  }
+}

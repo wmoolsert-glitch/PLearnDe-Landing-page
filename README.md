@@ -8,12 +8,16 @@ Static HTML/CSS ไม่มี build step · deploy บน Cloudflare Pages
 
 ## โครงสร้าง
 
+**ทุกอย่างที่ขึ้นเว็บอยู่ใน `public/` เท่านั้น** — ไฟล์นอกโฟลเดอร์นี้ไม่ถูกเสิร์ฟ
+
 ```
-index.html      หน้าเดียว 7 sections (hero → problem → services → 5D → work → CTA → footer)
-styles.css      tokens + components ตาม design.md
-fonts/          BAUHS93.ttf (Bauhaus 93 — โลโก้ไทป์เท่านั้น)
-assets/         favicon.svg, logo PNG
-netlify.toml    publish = "."
+public/
+  index.html    หน้าเดียว 7 sections (hero → problem → services → 5D → work → CTA → footer)
+  styles.css    tokens + components ตาม design.md
+  _headers      cache headers
+  fonts/        BAUHS93.ttf (Bauhaus 93 — โลโก้ไทป์เท่านั้น)
+  assets/       favicon, logo, clients/, work/
+wrangler.jsonc  บอก Cloudflare ให้เสิร์ฟ public/
 ```
 
 ฟอนต์ Anuphan และ IBM Plex Sans Thai โหลดจาก Google Fonts
@@ -21,7 +25,7 @@ netlify.toml    publish = "."
 ## รันในเครื่อง
 
 ```bash
-python3 -m http.server 8765
+cd public && python3 -m http.server 8765
 ```
 
 แล้วเปิด http://localhost:8765

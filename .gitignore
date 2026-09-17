@@ -1,4 +1,5 @@
 .netlify/
+.wrangler/
 .DS_Store
 
 # Video masters live outside the repo — `netlify deploy --dir=.` uploads
