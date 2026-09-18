@@ -707,7 +707,9 @@ img, svg { display: block; }
   object-fit: cover;
   transition: transform .5s cubic-bezier(.2, .7, .2, 1);
 }
-.photo-card:hover img { transform: scale(1.04); }
+@media (hover: hover) {
+  .photo-card:hover img { transform: scale(1.04); }
+}
 
 /* Client logo marquee */
 .marquee {
@@ -727,7 +729,11 @@ img, svg { display: block; }
   animation: marquee var(--marquee-duration) linear infinite;
 }
 
-.marquee:hover .marquee__track { animation-play-state: paused; }
+/* Pause-on-hover only where hover exists. On touch screens a tap leaves
+   :hover stuck on the tapped element, which froze the strip for good. */
+@media (hover: hover) {
+  .marquee:hover .marquee__track { animation-play-state: paused; }
+}
 
 .marquee__set {
   display: flex;
